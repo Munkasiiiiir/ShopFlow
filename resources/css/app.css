@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --sf-primary: #0f766e;
+        --sf-primary-hover: #0d9488;
+        --sf-primary-soft: #ccfbf1;
+        --sf-accent: #059669;
+        --sf-canvas: #f4f6f8;
+        --sf-surface: #ffffff;
+        --sf-border: #e5e7eb;
+        --sf-text: #1f2937;
+        --sf-muted: #6b7280;
+        --sf-heading: #111827;
+        --sf-sidebar-w: 16rem;
+        --sf-topbar-h: 4rem;
+        --sf-radius: 0.75rem;
+        --sf-shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-canvas text-ink antialiased;
+        font-size: 14px;
+    }
+}
+
+@layer components {
+    .sf-card {
+        @apply overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-soft;
+    }
+
+    .sf-page-title {
+        @apply text-xl font-semibold tracking-tight text-ink-heading;
+    }
+
+    .sf-page-subtitle {
+        @apply mt-0.5 text-sm text-ink-muted;
+    }
+
+    .sf-btn {
+        @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .sf-btn-primary {
+        @apply sf-btn bg-brand-700 text-white hover:bg-brand-600;
+    }
+
+    .sf-btn-accent {
+        @apply sf-btn bg-emerald-600 text-white hover:bg-emerald-500;
+    }
+
+    .sf-btn-secondary {
+        @apply sf-btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50;
+    }
+
+    .sf-btn-danger {
+        @apply sf-btn border border-red-200 bg-white text-red-600 hover:bg-red-50;
+    }
+
+    .sf-btn-ghost {
+        @apply sf-btn text-slate-600 hover:bg-slate-100;
+    }
+
+    .sf-input {
+        @apply w-full rounded-lg border-slate-200 text-sm shadow-sm focus:border-brand-500 focus:ring-brand-500;
+    }
+
+    .sf-select {
+        @apply rounded-lg border-slate-200 text-sm shadow-sm focus:border-brand-500 focus:ring-brand-500;
+    }
+
+    .sf-table {
+        @apply min-w-full text-sm;
+    }
+
+    .sf-table thead th {
+        @apply border-b border-slate-200 bg-slate-50/80 px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500;
+    }
+
+    .sf-table tbody td {
+        @apply border-b border-slate-100 px-3 py-2.5 text-slate-700;
+    }
+
+    .sf-table tbody tr:hover {
+        @apply bg-slate-50/70;
+    }
+
+    .sf-badge {
+        @apply inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium;
+    }
+
+    .sf-badge-success {
+        @apply sf-badge bg-emerald-50 text-emerald-700;
+    }
+
+    .sf-badge-warning {
+        @apply sf-badge bg-amber-50 text-amber-700;
+    }
+
+    .sf-badge-danger {
+        @apply sf-badge bg-red-50 text-red-700;
+    }
+
+    .sf-badge-info {
+        @apply sf-badge bg-sky-50 text-sky-700;
+    }
+
+    .sf-badge-neutral {
+        @apply sf-badge bg-slate-100 text-slate-600;
+    }
+
+    .sf-kpi {
+        @apply sf-card p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-lift;
+    }
+
+    .sf-kpi-icon {
+        @apply flex h-12 w-12 items-center justify-center rounded-xl;
+    }
+
+    .sf-alert {
+        @apply mb-4 rounded-lg px-4 py-2.5 text-sm;
+    }
+
+    .sf-alert-success {
+        @apply sf-alert border border-emerald-200 bg-emerald-50 text-emerald-800;
+    }
+
+    .sf-alert-error {
+        @apply sf-alert border border-red-200 bg-red-50 text-red-800;
+    }
+
+    .sf-sidebar-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-[13px] font-medium text-slate-600 transition;
+    }
+
+    .sf-sidebar-link:hover {
+        @apply bg-brand-50 text-brand-800;
+    }
+
+    .sf-sidebar-link-active {
+        @apply border-l-4 border-brand-700 bg-brand-50 pl-2.5 text-brand-800;
+    }
+
+    .sf-sidebar-section {
+        @apply mb-1 px-3 pt-4 pb-1 text-[11px] font-semibold uppercase tracking-wider text-slate-400;
+    }
+}
